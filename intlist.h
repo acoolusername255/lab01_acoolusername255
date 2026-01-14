@@ -30,6 +30,7 @@ public:
 private:
 
     // (Optional) You can add some private helper functions here.
+    void clear();
 
     // definition of Node structure (DO NOT CHANGE):
     struct Node {

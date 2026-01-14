@@ -120,12 +120,14 @@ int IntList::count() const {
 //Assignment operator should copy the list from the source
 //to this list, deleting/replacing any existing nodes
 IntList& IntList::operator=(const IntList& source){
-    //Delete all current nodes
-    clear();
-    Node* currentNode = source.head;
-    while (currentNode) {
-        push_back(currentNode->info);
-        currentNode = currentNode->next;
+    if (this != &source) {
+        //Delete all current nodes
+        clear();
+        Node* currentNode = source.head;
+        while (currentNode) {
+            push_back(currentNode->info);
+            currentNode = currentNode->next;
+        }
     }
     return *this;
 }
